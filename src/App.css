@@ -1,38 +1,102 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior:smooth;
+}
 .App {
+  display: block;
+}
+.Tasks, .Evaluate {
+  float: left;
+  width: 100%;
+  height: 100vh;
+  padding-top: 110px;
+}
+.main-tasks {
+  height: 40vh;
+  overflow: scroll;
+  scrollbar-width: none;
+  margin-bottom:10px;
+}
+.extra-tasks {
+    height: 41vh;
+    overflow: scroll;
+  scrollbar-width: none;
+}
+.Schedule {
+  float:left;
   text-align: center;
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+  padding-top: 105px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (min-width: 67.5rem) {
+  .Tasks,
+  .Schedule,
+  .Evaluate {
+    width: 33.33%;
+    border: none;
+  };
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 67.5rem) {
+    *{
+        scrollbar-width: none;
+    }
   }
+.schedule-form {
+  text-align: right;
+  height: max-content;
+  margin-top: 50px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.schedule-task {
+    border-bottom: 1px solid black;
 }
-
-.App-link {
-  color: #61dafb;
+.schedule-list {
+    height: 77vh; 
+    margin-top: 20px;
+    overflow: scroll;
+    scrollbar-width: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-links {
+    margin-top:-20px;
+}
+.Navbar {
+    position:fixed;
+    text-align: center;
+    width:100%;
+    background-color: white;
+    z-index: 1;
+    font-family: 'Open Sans', sans-serif;
+}
+.Navbar a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    margin: 15px;
+}
+.Achiev {
+    height: 40vh;
+    overflow: scroll;
+    scrollbar-width: none;
+    margin-bottom:10px;
+}
+.Gratefullness {
+    height: 41vh;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.box {
+    background-color: #e0e0e0;
+    margin-left:15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+.clear{
+  color:gray;
+}
+.clear:hover{
+  transform: rotate(180deg) scale(1.5);
+  transition: all 0.6s ease-in-out 0s;
 }

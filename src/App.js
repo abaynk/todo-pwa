@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Evaluate from "./components/Evaluate";
+import Schedule from "./components/Schedule";
+import Tasks from "./components/Tasks";
+import Navbar from "./components/Navbar";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
 
-function App() {
+const App = () => {
+  const THEME = createMuiTheme({
+    typography: {
+      'fontFamily':"'Open Sans', sans-serif"
+    }
+  })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MuiThemeProvider theme={THEME}>
+        <Navbar />
+        <Tasks />
+        <Schedule />
+        <Evaluate />
+      </MuiThemeProvider>
     </div>
   );
-}
+};
 
 export default App;
